@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Npgsql;
 
 namespace U6P2
@@ -78,15 +79,32 @@ namespace U6P2
             }
         }
 
+        public DataTable consultaIndividual(string tabla,string id)
+        {
+            try
+            {
+                string query = "SELECT * FROM \"" + tabla + "\" " +"WHERE " + id +  ";";
+                NpgsqlCommand conector = new NpgsqlCommand(query, con);
+                NpgsqlDataAdapter datos = new NpgsqlDataAdapter(conector);
+                DataTable tablad = new DataTable();
+                datos.Fill(tablad);
+                return tablad;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Ha ocurrido la sig excepcion: " + ex.Message);
+                return null;
+            }
+        }
         public DataTable construirComboBox()
         {
             try
             {
-                string query = "SELECT tablename FROM pg_tables WHERE schemaname = 'public';";
+                string query = "SELECT tablename FROM pg_tables WHERE schemaname = 'public' ORDER BY tablename ASC;";
                 NpgsqlCommand conector = new NpgsqlCommand(query, con);
                 NpgsqlDataAdapter datos = new NpgsqlDataAdapter(conector);
                 DataTable tablad = new DataTable();
-                
+
                 datos.Fill(tablad);
                 return tablad;
             }
@@ -97,6 +115,67 @@ namespace U6P2
             }
 
         }
+
+        public bool insertar(string tabla, string values)
+        {
+            try
+            {
+
+                string query = "INSERT INTO " + tabla + " VALUES(" + values + ");";
+                NpgsqlCommand comando = new NpgsqlCommand(query, con);
+                Debug.WriteLine(query);
+                comando.ExecuteNonQuery();
+                Debug.WriteLine("Insercion Exitosa");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public bool modificar(string tabla, string values)
+        {
+            try
+            {
+                string query = "UPDATE " + tabla + " SET " + values + ";";
+                NpgsqlCommand comando = new NpgsqlCommand(query, con);
+                Debug.WriteLine(query);
+                comando.ExecuteNonQuery();
+                Debug.WriteLine("Modificacion Exitosa");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public bool eliminar(string tabla, string condicion)
+        {
+            try
+            {
+
+                string query = "DELETE FROM " + tabla + " WHERE " + condicion + ";";
+                NpgsqlCommand comando = new NpgsqlCommand(query, con);
+                Debug.WriteLine(query);
+                comando.ExecuteNonQuery();
+                Debug.WriteLine("Eliminacion Exitosa");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                MessageBox.Show("Error: "+ ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+
         /*
         public ResultSet consultaIndividual(string tabla, string id)
         {
@@ -116,54 +195,9 @@ namespace U6P2
             }
 
 
-                public bool insertar(string tabla, string values)
-                {
-                    try
-                    {
-                        Statement stmt = (Statement)con.createStatement();
-                        string query = "INSERT INTO " + tabla + " VALUES(" + values + ");";
-                        stmt.executeUpdate(query);
-                        Debug.WriteLine("Insercion Exitosa");
-                        return true;
-                    }
-                    catch (SQLException ex)
-                    {
-                        Logger.getLogger(ConexionMysql.class.getName()).log(Level.SEVERE, null, ex);
-        return false;
-                }
-        }
+                
 
-        public boolean modificar(string tabla, string values)
-        {
-            try
-            {
-                Statement stmt = (Statement)con.createStatement();
-                string query = "UPDATE " + tabla + " SET " + values + ";";
-                stmt.executeUpdate(query);
-                return true;
-            }
-            catch (SQLException ex)
-            {
-                Logger.getLogger(ConexionMysql.class.getName()).log(Level.SEVERE, null, ex);
-        return false;
-                }
-            }
-
-            public boolean eliminar(string tabla, string condicion)
-        {
-            try
-            {
-                Statement stmt = (Statement)con.createStatement();
-                string query = "DELETE FROM " + tabla + " WHERE " + condicion + ";";
-                stmt.executeUpdate(query);
-                return true;
-            }
-            catch (SQLException ex)
-            {
-                Logger.getLogger(ConexionMysql.class.getName()).log(Level.SEVERE, null, ex);
-        return false;
-                }
-            }
+        
 
 
 

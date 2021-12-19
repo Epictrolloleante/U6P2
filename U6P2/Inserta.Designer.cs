@@ -1,4 +1,7 @@
-﻿namespace U6P2
+﻿using Microsoft.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+
+namespace U6P2
 {
     partial class Inserta
     {
@@ -30,32 +33,32 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Id_trabA = new System.Windows.Forms.TextBox();
-            this.Id_obraA = new System.Windows.Forms.TextBox();
             this.Dias = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Id_obraA = new System.Windows.Forms.TextBox();
+            this.Id_trabA = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Tipo = new System.Windows.Forms.TextBox();
             this.Direccion = new System.Windows.Forms.TextBox();
             this.Id_obra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Id_trab = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Nombre = new System.Windows.Forms.TextBox();
-            this.Sueldo = new System.Windows.Forms.TextBox();
-            this.Fecha = new System.Windows.Forms.TextBox();
-            this.Oficio = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Oficio = new System.Windows.Forms.ComboBox();
+            this.Sueldo = new System.Windows.Forms.TextBox();
+            this.Nombre = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Id_trab = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.regresaI = new System.Windows.Forms.Button();
+            this.insertaI = new System.Windows.Forms.Button();
+            this.Fecha = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -72,6 +75,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(520, 262);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -86,8 +90,56 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(512, 236);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Asignación";
+            this.tabPage1.Text = "Asignacion";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Dias
+            // 
+            this.Dias.Location = new System.Drawing.Point(62, 68);
+            this.Dias.Name = "Dias";
+            this.Dias.Size = new System.Drawing.Size(100, 20);
+            this.Dias.TabIndex = 5;
+            // 
+            // Id_obraA
+            // 
+            this.Id_obraA.Location = new System.Drawing.Point(62, 37);
+            this.Id_obraA.Name = "Id_obraA";
+            this.Id_obraA.Size = new System.Drawing.Size(100, 20);
+            this.Id_obraA.TabIndex = 4;
+            // 
+            // Id_trabA
+            // 
+            this.Id_trabA.Location = new System.Drawing.Point(63, 11);
+            this.Id_trabA.Name = "Id_trabA";
+            this.Id_trabA.Size = new System.Drawing.Size(100, 20);
+            this.Id_trabA.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Dias:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Id_obra:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Id_Trab:";
             // 
             // tabPage2
             // 
@@ -104,92 +156,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Obra";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(129, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Regresa";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(287, 278);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Insertar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Id_Trab:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Id_obra:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Dias:";
-            // 
-            // Id_trabA
-            // 
-            this.Id_trabA.Location = new System.Drawing.Point(63, 11);
-            this.Id_trabA.Name = "Id_trabA";
-            this.Id_trabA.Size = new System.Drawing.Size(100, 20);
-            this.Id_trabA.TabIndex = 3;
-            // 
-            // Id_obraA
-            // 
-            this.Id_obraA.Location = new System.Drawing.Point(62, 37);
-            this.Id_obraA.Name = "Id_obraA";
-            this.Id_obraA.Size = new System.Drawing.Size(100, 20);
-            this.Id_obraA.TabIndex = 4;
-            // 
-            // Dias
-            // 
-            this.Dias.Location = new System.Drawing.Point(62, 68);
-            this.Dias.Name = "Dias";
-            this.Dias.Size = new System.Drawing.Size(100, 20);
-            this.Dias.TabIndex = 5;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.Oficio);
-            this.tabPage3.Controls.Add(this.Fecha);
-            this.tabPage3.Controls.Add(this.Sueldo);
-            this.tabPage3.Controls.Add(this.Nombre);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.Id_trab);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(512, 236);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Trabajador";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // Tipo
             // 
@@ -239,77 +205,25 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Id_Obra:";
             // 
-            // label7
+            // tabPage3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Id_trab:";
-            // 
-            // Id_trab
-            // 
-            this.Id_trab.Location = new System.Drawing.Point(92, 15);
-            this.Id_trab.Name = "Id_trab";
-            this.Id_trab.Size = new System.Drawing.Size(121, 20);
-            this.Id_trab.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Nombre:";
-            // 
-            // Nombre
-            // 
-            this.Nombre.Location = new System.Drawing.Point(91, 42);
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(122, 20);
-            this.Nombre.TabIndex = 3;
-            // 
-            // Sueldo
-            // 
-            this.Sueldo.Location = new System.Drawing.Point(92, 69);
-            this.Sueldo.Name = "Sueldo";
-            this.Sueldo.Size = new System.Drawing.Size(121, 20);
-            this.Sueldo.TabIndex = 4;
-            // 
-            // Fecha
-            // 
-            this.Fecha.Location = new System.Drawing.Point(91, 96);
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Size = new System.Drawing.Size(122, 20);
-            this.Fecha.TabIndex = 5;
-            // 
-            // Oficio
-            // 
-            this.Oficio.FormattingEnabled = true;
-            this.Oficio.Location = new System.Drawing.Point(92, 123);
-            this.Oficio.Name = "Oficio";
-            this.Oficio.Size = new System.Drawing.Size(121, 21);
-            this.Oficio.TabIndex = 6;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 72);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Sueldo_hr:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 99);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Fecha_Ingreso:";
+            this.tabPage3.Controls.Add(this.Fecha);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.Oficio);
+            this.tabPage3.Controls.Add(this.Sueldo);
+            this.tabPage3.Controls.Add(this.Nombre);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.Id_trab);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(512, 236);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Trabajador";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -320,15 +234,113 @@
             this.label11.TabIndex = 9;
             this.label11.Text = "Oficio:";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 99);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Fecha_Ingreso:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 72);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Sueldo_hr:";
+            // 
+            // Oficio
+            // 
+            this.Oficio.FormattingEnabled = true;
+            this.Oficio.Items.AddRange(new object[] {
+            "CARPINTERO",
+            "FONTANERO",
+            "HERRERO",
+            "ELECTRICO"});
+            this.Oficio.Location = new System.Drawing.Point(92, 123);
+            this.Oficio.Name = "Oficio";
+            this.Oficio.Size = new System.Drawing.Size(121, 21);
+            this.Oficio.TabIndex = 6;
+            // 
+            // Sueldo
+            // 
+            this.Sueldo.Location = new System.Drawing.Point(92, 69);
+            this.Sueldo.Name = "Sueldo";
+            this.Sueldo.Size = new System.Drawing.Size(121, 20);
+            this.Sueldo.TabIndex = 4;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Location = new System.Drawing.Point(91, 42);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(122, 20);
+            this.Nombre.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Nombre:";
+            // 
+            // Id_trab
+            // 
+            this.Id_trab.Location = new System.Drawing.Point(92, 15);
+            this.Id_trab.Name = "Id_trab";
+            this.Id_trab.Size = new System.Drawing.Size(121, 20);
+            this.Id_trab.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Id_trab:";
+            // 
+            // regresaI
+            // 
+            this.regresaI.Location = new System.Drawing.Point(129, 278);
+            this.regresaI.Name = "regresaI";
+            this.regresaI.Size = new System.Drawing.Size(75, 23);
+            this.regresaI.TabIndex = 1;
+            this.regresaI.Text = "Regresa";
+            this.regresaI.UseVisualStyleBackColor = true;
+            this.regresaI.Click += new System.EventHandler(this.regresaI_Click);
+            // 
+            // insertaI
+            // 
+            this.insertaI.Location = new System.Drawing.Point(287, 278);
+            this.insertaI.Name = "insertaI";
+            this.insertaI.Size = new System.Drawing.Size(75, 23);
+            this.insertaI.TabIndex = 2;
+            this.insertaI.Text = "Insertar";
+            this.insertaI.UseVisualStyleBackColor = true;
+            this.insertaI.Click += new System.EventHandler(this.insertaI_Click);
+            // 
+            // Fecha
+            // 
+            this.Fecha.Location = new System.Drawing.Point(93, 97);
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Size = new System.Drawing.Size(207, 20);
+            this.Fecha.TabIndex = 11;
+            // 
             // Inserta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 313);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.insertaI);
+            this.Controls.Add(this.regresaI);
             this.Controls.Add(this.tabControl1);
             this.Name = "Inserta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -353,8 +365,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button regresaI;
+        private System.Windows.Forms.Button insertaI;
         private System.Windows.Forms.TextBox Tipo;
         private System.Windows.Forms.TextBox Direccion;
         private System.Windows.Forms.TextBox Id_obra;
@@ -365,11 +377,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox Oficio;
-        private System.Windows.Forms.TextBox Fecha;
         private System.Windows.Forms.TextBox Sueldo;
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Id_trab;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker Fecha;
     }
 }
