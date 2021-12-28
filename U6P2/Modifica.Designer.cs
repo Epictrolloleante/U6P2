@@ -56,6 +56,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Id_trab = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.msg3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -115,9 +116,11 @@
             this.Dias.Name = "Dias";
             this.Dias.Size = new System.Drawing.Size(100, 20);
             this.Dias.TabIndex = 5;
+            this.Dias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Dias_KeyPress);
             // 
             // Id_obraA
             // 
+            this.Id_obraA.Enabled = false;
             this.Id_obraA.Location = new System.Drawing.Point(62, 37);
             this.Id_obraA.Name = "Id_obraA";
             this.Id_obraA.Size = new System.Drawing.Size(100, 20);
@@ -125,6 +128,7 @@
             // 
             // Id_trabA
             // 
+            this.Id_trabA.Enabled = false;
             this.Id_trabA.Location = new System.Drawing.Point(63, 11);
             this.Id_trabA.Name = "Id_trabA";
             this.Id_trabA.Size = new System.Drawing.Size(100, 20);
@@ -189,6 +193,7 @@
             // 
             // Id_obra
             // 
+            this.Id_obra.Enabled = false;
             this.Id_obra.Location = new System.Drawing.Point(59, 10);
             this.Id_obra.Name = "Id_obra";
             this.Id_obra.Size = new System.Drawing.Size(100, 20);
@@ -223,6 +228,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.msg3);
             this.tabPage3.Controls.Add(this.Fecha);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label10);
@@ -294,6 +300,8 @@
             this.Sueldo.Name = "Sueldo";
             this.Sueldo.Size = new System.Drawing.Size(121, 20);
             this.Sueldo.TabIndex = 4;
+            this.Sueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Sueldo_KeyPress);
+            this.Sueldo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Sueldo_KeyUp);
             // 
             // Nombre
             // 
@@ -301,6 +309,7 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(122, 20);
             this.Nombre.TabIndex = 3;
+            this.Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre_KeyPress);
             // 
             // label8
             // 
@@ -313,6 +322,7 @@
             // 
             // Id_trab
             // 
+            this.Id_trab.Enabled = false;
             this.Id_trab.Location = new System.Drawing.Point(92, 15);
             this.Id_trab.Name = "Id_trab";
             this.Id_trab.Size = new System.Drawing.Size(121, 20);
@@ -327,6 +337,14 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Id_trab:";
             // 
+            // msg3
+            // 
+            this.msg3.AutoSize = true;
+            this.msg3.Location = new System.Drawing.Point(313, 72);
+            this.msg3.Name = "msg3";
+            this.msg3.Size = new System.Drawing.Size(0, 13);
+            this.msg3.TabIndex = 12;
+            // 
             // Modifica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,7 +355,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Modifica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Modificar";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -379,5 +397,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Id_trab;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label msg3;
     }
 }

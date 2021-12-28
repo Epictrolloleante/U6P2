@@ -153,5 +153,81 @@ namespace U6P2
             consultaFrame.Closed += (s, args) => this.Close();
             consultaFrame.Show();
         }
+
+        private void Dias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+            if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+        }
+
+        private void Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+            if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+        }
+
+        private void Sueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+            if (char.IsPunctuation(e.KeyChar) && Sueldo.Text.IndexOf(".") != -1)
+            {
+                e.Handled = true;
+                Console.Beep();
+            }
+        }
+
+        private void Sueldo_KeyUp(object sender, KeyEventArgs e)
+        {
+            if ("".Equals(Sueldo.Text))
+            {
+                msg3.Text = "";
+                Sueldo.BackColor = Color.White;
+            }
+            else
+            {
+                double sd = double.Parse(Sueldo.Text);
+                if (sd >= 2000 && sd <= 40000)
+                {
+                    msg3.Text = "";
+                    Sueldo.BackColor = Color.White;
+                }
+                else
+                {
+                    msg3.Text = "Sueldo_hr entre 2000 y 40000";
+                    Sueldo.BackColor = Color.Red;
+                }
+
+            }
+        }
     }
 }

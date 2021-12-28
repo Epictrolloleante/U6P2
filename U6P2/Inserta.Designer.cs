@@ -33,6 +33,7 @@ namespace U6P2
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.msg1 = new System.Windows.Forms.Label();
             this.Dias = new System.Windows.Forms.TextBox();
             this.Id_obraA = new System.Windows.Forms.TextBox();
             this.Id_trabA = new System.Windows.Forms.TextBox();
@@ -47,6 +48,7 @@ namespace U6P2
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Fecha = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,7 +60,8 @@ namespace U6P2
             this.label7 = new System.Windows.Forms.Label();
             this.regresaI = new System.Windows.Forms.Button();
             this.insertaI = new System.Windows.Forms.Button();
-            this.Fecha = new System.Windows.Forms.DateTimePicker();
+            this.msg2 = new System.Windows.Forms.Label();
+            this.msg3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -79,6 +82,7 @@ namespace U6P2
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.msg1);
             this.tabPage1.Controls.Add(this.Dias);
             this.tabPage1.Controls.Add(this.Id_obraA);
             this.tabPage1.Controls.Add(this.Id_trabA);
@@ -93,12 +97,21 @@ namespace U6P2
             this.tabPage1.Text = "Asignacion";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // msg1
+            // 
+            this.msg1.AutoSize = true;
+            this.msg1.Location = new System.Drawing.Point(248, 17);
+            this.msg1.Name = "msg1";
+            this.msg1.Size = new System.Drawing.Size(0, 13);
+            this.msg1.TabIndex = 6;
+            // 
             // Dias
             // 
             this.Dias.Location = new System.Drawing.Point(62, 68);
             this.Dias.Name = "Dias";
             this.Dias.Size = new System.Drawing.Size(100, 20);
             this.Dias.TabIndex = 5;
+            this.Dias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Dias_KeyPress);
             // 
             // Id_obraA
             // 
@@ -106,6 +119,7 @@ namespace U6P2
             this.Id_obraA.Name = "Id_obraA";
             this.Id_obraA.Size = new System.Drawing.Size(100, 20);
             this.Id_obraA.TabIndex = 4;
+            this.Id_obraA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Id_obraA_KeyPress);
             // 
             // Id_trabA
             // 
@@ -113,6 +127,8 @@ namespace U6P2
             this.Id_trabA.Name = "Id_trabA";
             this.Id_trabA.Size = new System.Drawing.Size(100, 20);
             this.Id_trabA.TabIndex = 3;
+            this.Id_trabA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Id_trabA_KeyPress);
+            this.Id_trabA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Id_trabA_KeyUp);
             // 
             // label3
             // 
@@ -177,6 +193,7 @@ namespace U6P2
             this.Id_obra.Name = "Id_obra";
             this.Id_obra.Size = new System.Drawing.Size(100, 20);
             this.Id_obra.TabIndex = 9;
+            this.Id_obra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Id_obra_KeyPress);
             // 
             // label4
             // 
@@ -207,6 +224,8 @@ namespace U6P2
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.msg3);
+            this.tabPage3.Controls.Add(this.msg2);
             this.tabPage3.Controls.Add(this.Fecha);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label10);
@@ -224,6 +243,13 @@ namespace U6P2
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Trabajador";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.Location = new System.Drawing.Point(93, 97);
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Size = new System.Drawing.Size(207, 20);
+            this.Fecha.TabIndex = 11;
             // 
             // label11
             // 
@@ -264,6 +290,7 @@ namespace U6P2
             this.Oficio.Name = "Oficio";
             this.Oficio.Size = new System.Drawing.Size(121, 21);
             this.Oficio.TabIndex = 6;
+            this.Oficio.Text = "CARPINTERO";
             // 
             // Sueldo
             // 
@@ -271,6 +298,8 @@ namespace U6P2
             this.Sueldo.Name = "Sueldo";
             this.Sueldo.Size = new System.Drawing.Size(121, 20);
             this.Sueldo.TabIndex = 4;
+            this.Sueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Sueldo_KeyPress);
+            this.Sueldo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Sueldo_KeyUp);
             // 
             // Nombre
             // 
@@ -278,6 +307,7 @@ namespace U6P2
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(122, 20);
             this.Nombre.TabIndex = 3;
+            this.Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre_KeyPress);
             // 
             // label8
             // 
@@ -294,6 +324,8 @@ namespace U6P2
             this.Id_trab.Name = "Id_trab";
             this.Id_trab.Size = new System.Drawing.Size(121, 20);
             this.Id_trab.TabIndex = 1;
+            this.Id_trab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Id_trab_KeyPress);
+            this.Id_trab.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Id_trab_KeyUp);
             // 
             // label7
             // 
@@ -324,12 +356,21 @@ namespace U6P2
             this.insertaI.UseVisualStyleBackColor = true;
             this.insertaI.Click += new System.EventHandler(this.insertaI_Click);
             // 
-            // Fecha
+            // msg2
             // 
-            this.Fecha.Location = new System.Drawing.Point(93, 97);
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Size = new System.Drawing.Size(207, 20);
-            this.Fecha.TabIndex = 11;
+            this.msg2.AutoSize = true;
+            this.msg2.Location = new System.Drawing.Point(317, 22);
+            this.msg2.Name = "msg2";
+            this.msg2.Size = new System.Drawing.Size(0, 13);
+            this.msg2.TabIndex = 12;
+            // 
+            // msg3
+            // 
+            this.msg3.AutoSize = true;
+            this.msg3.Location = new System.Drawing.Point(317, 76);
+            this.msg3.Name = "msg3";
+            this.msg3.Size = new System.Drawing.Size(0, 13);
+            this.msg3.TabIndex = 13;
             // 
             // Inserta
             // 
@@ -341,7 +382,7 @@ namespace U6P2
             this.Controls.Add(this.tabControl1);
             this.Name = "Inserta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Insertar";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -383,5 +424,8 @@ namespace U6P2
         private System.Windows.Forms.TextBox Id_trab;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker Fecha;
+        private System.Windows.Forms.Label msg1;
+        private System.Windows.Forms.Label msg2;
+        private System.Windows.Forms.Label msg3;
     }
 }

@@ -14,7 +14,6 @@ namespace U6P2
     public partial class ConsultaFrame : Form
     {
         ConexionMysql mysql = new ConexionMysql("obras");
-        string defaulttab;
         public ConsultaFrame()
         {
             InitializeComponent();
@@ -29,7 +28,7 @@ namespace U6P2
 
         private void label1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mi rodilla shonen");
+
         }
 
         public void inicializar() {
