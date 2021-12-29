@@ -123,6 +123,7 @@
             this.Id_obraA.Enabled = false;
             this.Id_obraA.Location = new System.Drawing.Point(62, 37);
             this.Id_obraA.Name = "Id_obraA";
+            this.Id_obraA.ReadOnly = true;
             this.Id_obraA.Size = new System.Drawing.Size(100, 20);
             this.Id_obraA.TabIndex = 4;
             // 
@@ -131,6 +132,7 @@
             this.Id_trabA.Enabled = false;
             this.Id_trabA.Location = new System.Drawing.Point(63, 11);
             this.Id_trabA.Name = "Id_trabA";
+            this.Id_trabA.ReadOnly = true;
             this.Id_trabA.Size = new System.Drawing.Size(100, 20);
             this.Id_trabA.TabIndex = 3;
             // 
@@ -179,14 +181,14 @@
             // 
             // Tipo
             // 
-            this.Tipo.Location = new System.Drawing.Point(58, 67);
+            this.Tipo.Location = new System.Drawing.Point(67, 71);
             this.Tipo.Name = "Tipo";
             this.Tipo.Size = new System.Drawing.Size(100, 20);
             this.Tipo.TabIndex = 11;
             // 
             // Direccion
             // 
-            this.Direccion.Location = new System.Drawing.Point(58, 36);
+            this.Direccion.Location = new System.Drawing.Point(67, 36);
             this.Direccion.Name = "Direccion";
             this.Direccion.Size = new System.Drawing.Size(100, 20);
             this.Direccion.TabIndex = 10;
@@ -196,6 +198,7 @@
             this.Id_obra.Enabled = false;
             this.Id_obra.Location = new System.Drawing.Point(59, 10);
             this.Id_obra.Name = "Id_obra";
+            this.Id_obra.ReadOnly = true;
             this.Id_obra.Size = new System.Drawing.Size(100, 20);
             this.Id_obra.TabIndex = 9;
             // 
@@ -325,6 +328,7 @@
             this.Id_trab.Enabled = false;
             this.Id_trab.Location = new System.Drawing.Point(92, 15);
             this.Id_trab.Name = "Id_trab";
+            this.Id_trab.ReadOnly = true;
             this.Id_trab.Size = new System.Drawing.Size(121, 20);
             this.Id_trab.TabIndex = 1;
             // 
